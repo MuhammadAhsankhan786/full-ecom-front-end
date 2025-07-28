@@ -1,6 +1,8 @@
 {
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    {
+      "source": "/api/:path*",
+      "destination": "https://full-ecom-back-end.vercel.app/api/:path*"
+    }
   ]
 }
-

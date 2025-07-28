@@ -12,13 +12,21 @@
 
 // src/api/axiosInstance.js
 import axios from "axios";
-
 const axiosInstance = axios.create({
   baseURL:
     window.location.hostname === "localhost"
       ? "http://localhost:5001/api/v1"
       : "https://full-ecom-back-end.vercel.app/api/v1",
-  withCredentials: true,
+  withCredentials: true, // MUST for cookies to work!
 });
-
 export default axiosInstance;
+
+// const axiosInstance = axios.create({
+//   baseURL:
+//     window.location.hostname === "localhost"
+//       ? "http://localhost:5001/api/v1"
+//       : "https://full-ecom-back-end.vercel.app/api/v1",
+//   withCredentials: true,
+// });
+
+// export default axiosInstance;
