@@ -8,6 +8,7 @@ const App = () => {
   const { state } = useContext(GlobalContext);
   const isLogin = state.isLogin;
 
+  console.log("State", state);
   return (
     <div>
       <Navbar />

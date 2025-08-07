@@ -29,8 +29,8 @@ const Login = () => {
       setEmail("");
       setPassword("");
       navigate("/home");
-    } catch (error) {
-      console.error("Login error:", error.response?.data || error.message);
+    } catch {
+      // console.error("Login error:", error.response?.data || error.message);
       alert("Login failed!");
     }
   };
