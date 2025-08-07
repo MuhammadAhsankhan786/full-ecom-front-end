@@ -1,11 +1,12 @@
-
 {
-  "version": 2,
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "https://full-ecom-back-end.vercel.app/api/$1"
+      "source": "/api/:path*",
+      "destination": "https://full-ecom-back-end.vercel.app/api/:path*"
     }
   ]
 }
 
+
+
+ 
