@@ -29,9 +29,13 @@ const Login = () => {
       setEmail("");
       setPassword("");
       navigate("/home");
-    } catch {
-      // console.error("Login error:", error.response?.data || error.message);
-      alert("Login failed!");
+    } catch (error) {
+      console.error("Login error:", error.response?.data || error.message);
+      Swal.fire({
+        title: "Error",
+        text: error.response?.data?.message || "Login failed!",
+        icon: "error",
+      });
     }
   };
 
