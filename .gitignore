@@ -22,4 +22,7 @@ node_modules
 *.njsproj
 *.sln
 *.sw?
+# Env files
 .env
+.env.local
+.env.production
