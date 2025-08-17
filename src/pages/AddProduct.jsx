@@ -57,13 +57,20 @@ const AddProduct = () => {
 
     try {
       const formData = new FormData();
-      formData.append("product_name", productName);
-      formData.append("description", productDescription);
-      formData.append("price", productPrice);
-      formData.append("category_id", categoryId);
-      formData.append("product_image", productImage);
+      formData.append("product_name", productName); // ✅ Backend me req.body.product_name
+      formData.append("description", productDescription); // ✅ req.body.description
+      formData.append("price", productPrice); // ✅ req.body.price
+      formData.append("category_id", categoryId); // ✅ req.body.category_id
+      formData.append("product_image", productImage); // ✅ req.file
 
-      const response = await axiosInstance.post("/products", formData);
+      const response = await axiosInstance.post("/products", formData, {
+        headers: {
+          // ❗ Important: Multer ko proper parsing ke liye chahiye
+          "Content-Type": "multipart/form-data",
+        },
+      });
+
+      console.log("✅ Product added:", response.data);
 
       console.log("✅ Product added:", response.data);
 
